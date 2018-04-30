@@ -1,0 +1,75 @@
+<form novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+  Please fill in the following fields:
+  {{isValid}}
+  <p>
+    <label>
+      <span class="form_label">Address</span>
+      <input type="text"
+             placeholder="Address (<= 20 char)"
+             name="address"
+             ngModel
+             #userAddress="ngModel"
+             maxlength="20"
+             required
+      >
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <span class="form_label">City, State, Country</span>
+      <input type="text"
+             placeholder="Your address (>10 char)"
+             name="city_state_country"
+             minlength="10"
+             ngModel
+             required
+      >
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <span class="form_label">ZIP</span>
+      <input type="text"
+             pattern="[0-9]+"
+             maxlength = "5"
+             placeholder="ZIP (<=5 char)"
+             name="zip"
+             ngModel
+             required
+      >
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <span class="form_label">Credit Card Number (no spaces)</span>
+      <input type="text"
+             pattern="[0-9]+"
+             maxlength = "20"
+             placeholder="Card # (No spaces)"
+             name="card"
+             ngModel
+             required
+      >
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <span class="form_label">Exp</span>
+      <input type="text"
+             pattern="^(0[1-9]|1[012])\/\d{2}$"
+             placeholder="MM/YY"
+             name="exp"
+             maxlength="5"
+             ngModel
+             required
+      >
+    </label>
+  </p>
+
+  <button mat-button type="submit" (click)="openConfirmDialog()" [disabled]="f.invalid">Checkout</button>
+
+</form>

@@ -1,0 +1,53 @@
+<h2>Store Inventory</h2>
+<body>
+
+<div class = "products">
+  <h4> Total: ${{cartTotal}}.00
+    <button [ngClass]="{'buttonColor': true}" type="button" mat-button (click)="sidenav.open()">
+      View Cart
+    </button>
+  </h4>
+
+</div>
+<div>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav class="example-sidenav">
+      <table>
+        <tr id = "tableheader">
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        <tr *ngFor="let product of products; let i=index">
+          <td>{{product.name}}</td>
+          <td>${{product.price}}.00</td>
+          <td>
+            <input matInput type="number" min="0" max={{product.orig}} name="request" [(ngModel)]="product.request" (click) = addToCart(i)>
+          </td>
+          <td>${{product.total}}.00</td>
+        </tr>
+      </table>
+      <p>
+        <b> Total: ${{ cartTotal }}.00 </b>
+        <button mat-button [ngClass]="{'buttonColor': this.cartTotal > 0}" routerLink="/checkout" [disabled]="this.cartTotal <= 0">Checkout</button>
+      </p>
+    </mat-sidenav>
+    <div class="example-sidenav-content">
+      <div>
+        <div class="singleProduct" align="left" *ngFor="let product of products; let i=index">
+          <div id="image">
+            <img src="/assets/{{product.id}}.jpg" />
+          </div>
+          <div id = "name"><h4>{{product.name}}</h4></div>
+          <div id = "price">Price: ${{product.price}}</div>
+          <div id = "remain">In Stock: {{product.remain}}</div>
+          <div>
+            Add To Cart: <input matInput type="number" min="0" max={{product.orig}} name="request" [(ngModel)]="product.request" (click) = addToCart(i)>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-container>
+</div>
+</body>

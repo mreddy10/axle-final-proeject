@@ -1,0 +1,53 @@
+.body {
+  background-color: aliceblue;
+}
+.price{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.name{
+  font-style: italic;
+}
+.buttonColor {
+  background-color: lavender;
+}
+
+img {
+  position: center;
+  width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  display: inline-flex;
+}
+
+.singleProduct {
+  text-align: center;
+  display: inline-block;
+  margin: 20px;
+}
+
+
+p{
+  margin: 10px;
+  padding: 10px;
+}
+
+.example-sidenav {
+  background-color: aliceblue;
+
+}
+
+ table, th , td {
+   border: 10px darkblue;
+   padding: 5px;
+ }
+table tr:nth-child(odd) {
+  background-color: lightsteelblue;
+}
+table tr:nth-child(even) {
+  background-color: lavender;
+}
+
