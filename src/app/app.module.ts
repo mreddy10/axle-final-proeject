@@ -9,6 +9,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
+import {ReactiveFormsModule} from '@angular/forms';
+import {RouterTestingModule} from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -41,7 +43,9 @@ import { ConfirmComponent } from './confirm/confirm.component';
     MatButtonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
   ],
   providers: [
     ProductService,

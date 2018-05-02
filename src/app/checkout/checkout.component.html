@@ -1,3 +1,37 @@
+<form [formGroup]="userForm" (submit)="openConfirmDialog()">
+    <label for="address">Address</label>
+    <input formControlName="address" id="address"/>
+
+  <p>
+    <label for="phone_num">Phone Number</label>
+    <input formControlName="phone_num" id="phone_num"/>
+  </p>
+
+  <p>
+    <label for="city_state_country">City, State, Country</label>
+    <input formControlName="city_state_country" id="city_state_country"/>
+  </p>
+
+  <p>
+    <label for="zip">ZIP Code</label>
+    <input formControlName="zip" id="zip"/>
+  </p>
+
+  <p>
+    <label for="card">Credit Card Number</label>
+    <input formControlName="card" id="card"/>
+  </p>
+
+  <p>
+    <label for="exp">Expiry Date (MM/YY)</label>
+    <input formControlName="exp" id="exp"/>
+  </p>
+
+
+</form>
+<button mat-button type="submit" (click)="openConfirmDialog()" [disabled]="!userForm.valid">Checkout</button>
+
+<!--
 <form novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
   Please fill in the following fields:
   {{isValid}}
@@ -73,3 +107,4 @@
   <button mat-button type="submit" (click)="openConfirmDialog()" [disabled]="f.invalid">Checkout</button>
 
 </form>
+--->
